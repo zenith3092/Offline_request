@@ -7,8 +7,8 @@ As we send a server a request, chances are some connection errors occur. This mo
 ### Step1: Creating url and sending data
 #### Example:
 ```
-url = "http://127.0.0.1:5062"
-data = {"service":"business","operation":"get_main_data"}
+url = 'http://127.0.0.1:5062'
+data = {'service': 'business', 'operation': 'get_main_data'}
 ```
 
 ### Step2: Defining a sending object
@@ -20,7 +20,7 @@ test = Send_obj(url, data)
 ### Step3: Call the method "send" and choose sending type
 #### Example:
 ```
-get = test.send('get')   # you can choose "get" or "post"
+get = test.send('get')   # you can choose 'get' or 'post'
 ```
 
 ### Note:

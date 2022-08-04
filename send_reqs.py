@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# Developer: Xianglin Wu (xianglin3092@gmail.com
+
 import portalocker
 import requests
 import json
@@ -107,28 +110,29 @@ class Send_obj:
 
 
 if __name__ == '__main__':
+    # Example
     url = "http://127.0.0.1:5062"
     
     data1 = {"service":"sensor","operation":"get_config"}
     data2 = {"service":"sensor","operation":"add_sensor_information","sensor_id":"AAA01","status":"1"}
     
-    # Send a GET request
+    ## Send a GET request
     test_1 = Send_obj(url, data1)
     get_1 = test_1.send('get')
     print(get_1)
     
-    # Send a POST request
+    ## Send a POST request
     test_2 = Send_obj(url, data2)
     post_1 = test_2.send('post')
     print(post_1)
     
-    # Send a POST request (only the past request which is not sent)
+    ## Send a POST request (only the past request which is not sent)
     # test_3 = Send_obj(url)
-    # post_2 = test_3.post(only_past=True)
+    # post_2 = test_3.send('post', only_past=True)
     # print(post_2)
 
-    # Send a POST request and then send again (but only the past request which is not sent)
+    ## Send a POST request and then send again (but only the past request which is not sent)
     # test_4 = Send_obj(url, data2)
-    # post_3 = test_4.post()
-    # post_4 = test_4.post(only_past=True)
+    # post_3 = test_4.send('post')
+    # post_4 = test_4.send('post', only_past=True)
     # print(post_4)
